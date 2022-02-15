@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "./components/Card";
 import Search from "./components/Search";
+import Header from "./components/Header";
 
 const App = () => {
   const [images, setImages] = useState([]);
@@ -24,6 +25,7 @@ const App = () => {
 
   return (
     <div className="container mx-auto">
+      <Header />
       <Search searchText={SearchHandler} />
 
       {!isLoading && images.length === 0 && (
@@ -33,7 +35,8 @@ const App = () => {
       {isLoading ? (
         <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1>
       ) : (
-        <div className="grid grid-cols-3 gap-4">
+        // <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-auto justify-center gap-4 sm:grid-cols-2 md:grid-cols-3">
           {images.map((image) => (
             <Card key={image.id} image={image} />
           ))}
