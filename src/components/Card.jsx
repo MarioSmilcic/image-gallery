@@ -5,7 +5,7 @@ const Card = (props) => {
     <div className="max-w-sm rounded overflow-hidden shadow-lg">
       <img src={props.image.webformatURL} alt="" className="w-full" />
       <div className="px-6 py-4">
-        <div className="font-bold text-blue-500 text-xl mb-2">
+        <div className="font-bold text-teal-500 text-xl mb-2">
           Photo by {props.image.user}
         </div>
         <ul>
@@ -25,7 +25,10 @@ const Card = (props) => {
       </div>
       <div className="px-6 py-4">
         {tags.map((tag, index) => (
-          <span key={index} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+          <span
+            key={index}
+            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
+          >
             #{tag}
           </span>
         ))}
